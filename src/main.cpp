@@ -59,8 +59,8 @@ void loop() {
   http.addHeader("X-Auth-Token", AUTH_TOKEN);
   int content_length =0;
   String payload = String("{ \"value\": " + String(millis()/1000) + "}");
-  content_length = payload.length();
-  http.addHeader("Content-Length", String(content_length));
+  //content_length = payload.length();
+  //http.addHeader("Content-Length", String(content_length));
   int httpCode = http.POST(payload);
   if(httpCode > 0) {
     String payload = http.getString();
